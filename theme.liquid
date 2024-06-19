@@ -1,0 +1,23 @@
+<!-- Add below code in theme.liquid -->
+
+{% if settings.message != blank %}
+      <script>
+        var titles = {{ settings.message | split: ';' | json }};
+        var currentIndex = 0;
+        var intervalId;
+
+        function changeTitle() {
+          $('title').text(titles[currentIndex]);
+          currentIndex = (currentIndex + 1) % titles.length;
+        }
+
+        $(document).on('visibilitychange', function() {
+          if (document.visibilityState === 'hidden') {
+            intervalId = setInterval(changeTitle, {{ settings.delay }}); // Change to the desired interval (in milliseconds)
+          } else {
+            clearInterval(intervalId);
+            $('title').text('{{ shop.name }}');
+          }
+        });
+      </script>
+    {% endif %}
