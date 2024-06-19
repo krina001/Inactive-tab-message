@@ -1,0 +1,23 @@
+  {
+    "name": "⚡ Inactive tab message",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "message",
+        "label": "Message",
+        "default": "🔥 Don't forget this...; 🔥 Come back!",
+        "info": "Use ';' to create multi message. Use [emojis](https:\/\/getemoji.com\/), [emojis 2](https:\/\/emojipedia.org\/) and if you don't want to use it leave it blank"
+      },
+      {
+        "type": "range",
+        "id": "delay",
+        "min": 100,
+        "max": 5000,
+        "step": 100,
+        "unit": "ms",
+        "label": "Delay",
+        "info": "Delay between transitions (in milliseconds). If only a message will be disabled. Not can preview on admin editor.",
+        "default": 1000
+      }
+    ]
+  }
